@@ -31,4 +31,13 @@ public class TesteAffirmation {
         var Genereux = new Genereux(true);
         assertTrue(LogiqueEtOu.Affirmation(Pauvre.evaluation(), Genereux.evaluation()));
     }
+
+    @Test
+    void LouEstBeauOuGénéreuxDoncLouEstPauvre () {
+        var lou = new NomPersonne("Lou");
+        var Beau = new Beau();
+        var Genereux = new Genereux(true);
+        var Pauvre = new Pauvre();
+        assertFalse(LogiqueEtOu.Affirmation(LogiqueEtOu.Ou(Beau.evaluation(), Genereux.evaluation()), Pauvre.evaluation()));
+    }
 }
