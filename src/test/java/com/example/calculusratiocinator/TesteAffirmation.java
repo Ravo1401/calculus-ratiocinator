@@ -29,6 +29,6 @@ public class TesteAffirmation {
         var lou = new NomPersonne("Lou");
         var Pauvre = new Pauvre();
         var Genereux = new Genereux(true);
-        assertTrue(LogiqueEtOu.Et(Pauvre.evaluation(), Genereux.evaluation()));
+        assertTrue(LogiqueEtOu.Affirmation(Pauvre.evaluation(), Genereux.evaluation()));
     }
 }
