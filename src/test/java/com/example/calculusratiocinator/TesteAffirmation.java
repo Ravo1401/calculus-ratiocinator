@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 public class TesteAffirmation {
@@ -21,5 +22,13 @@ public class TesteAffirmation {
         var Beau = new Beau();
         var Pauvre = new Pauvre();
         assertFalse(LogiqueEtOu.Et(Pauvre.evaluation(), Beau.evaluation()));
+    }
+
+    @Test
+    void LouEstPauvreDoncGénéreux () {
+        var lou = new NomPersonne("Lou");
+        var Pauvre = new Pauvre();
+        var Genereux = new Genereux(true);
+        assertTrue(LogiqueEtOu.Et(Pauvre.evaluation(), Genereux.evaluation()));
     }
 }
